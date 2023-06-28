@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to JavaScript frameworks.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="js, javascript, framework, react, svelte, vue, angular, ember, vulcan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>JS Frameworks</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://sagecode.net/prism.css">
+  <script src="https://sagecode.net/prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col bottom-right">
+        <a href="index.html#js-bookmark" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>JavaScript Frameworks</h1>
+
+<div class="alert alert-secondary shadow-sm">Frameworks are basically application templates used to start a JavaScript project. A framework has one or more libraries, folder structure and templates. Using these resources your productivity to create a dynamic website is greatly improved. In this tutorial we take a look at most popular frameworks.</div>
+
+
+<h4>Page bookmarks:</h4>
+
+<ul>
+<li><a href="#react" >react js</a><ul>
+    <li><a href="#react-app" >create react app</a></li>
+    <li><a href="#react-native" >react native</a></li>
+    <li><a href="#vulcan" >vulcan framework</a></li>
+</ul></li>
+<li><a href="#vue">vue</a></li>
+<li><a href="#svelte">svelte</a></li>
+<li><a href="#angular">angular</a></li>
+<li><a href="#ember">embers</a></li>
+</ul>
+
+<h2><a id="react">Introduction to React</h2>
+
+<div class="alert alert-info">React is a JavaScript library for building SPA (Single Page Applications). In other words React is a JavaScript library for building user interfaces using components. It can be used to create the view in a MVC application. MVC stands for Model View Controller.</div>
+
+<p>React is not a new language. It is a technology paradigm that separate concerns into a web application. It is a framework created and maintained by Facebook. You can include this library in your web-pages and then use React programming to create web pages that can change contend dynamically, driven by certain events.</p>
+
+<p>SPA = Singe Page Applications: This kind of applications are appreciated because you do not need to refresh your page using refresh button. The page is updated automatically, therefore the name "reactive page" or "reactive application".</p>
+
+<h3>Why learn React</h3>
+<p>React does a good job to improve your productivity when is about programming dynamic websites. So learning React will enable you to build a modern and responsive website. That is a website that is mobile friendly and can be used on desktop as well. Many software companies are looking for web developers with React skills.</p>
+
+<h3>React secrets</h3>
+<p>React is using HTML5 features, CSS and JavaScript to create UI components. So react is an application of new technology. React is open source and free to use. It is available on GitHub and it has MIT License.</p>
+<ul>
+<li>React:&nbsp;<a href="https://reactjs.org/" rel="nofollow">Home page</a></li>
+<li>React:&nbsp;<a href="https://github.com/facebook/react/">GitHub project</a></li>
+</ul>
+
+<h3>How to learn</h3>
+<p>React can be learned on-line for free from its homepage. There is available documentation and one tutorial. Before you learn React you need to know HTML+CSS and JavaScript. There is no point of starting if you do not know these things:</p>
+<ul>
+<li>Learn (Mozilla):
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
+target="_blank" rel="nofollow noopener noreferrer">HTML5</a></li>
+<li>Learn (Mozilla):
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript"
+target="_blank" rel="nofollow noopener noreferrer">JavaScript</a></li>
+</ul>
+
+<h3>Using React</h3>
+<p>React can be added to a HTML page like any other JavaScript library using &lt;script&gt; tag. Then you can use its features gradually to enhance your page with dynamic components. To create these dynamic components you must create your own JavaScript files and add them to your web page after you load React libraries.</p>
+<div>
+
+<pre><code class="language-html"> &lt;!-- ... other HTML ... --&gt;
+ &lt;!-- Load React. --&gt;
+ &lt;!-- Note: when deploying, replace "development.js" with "production.min.js". --&gt;
+ &lt;script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin&gt;&lt;/script&gt;
+ &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin&gt;&lt;/script&gt;
+ &lt;!-- Load our React component. --&gt;
+ &lt;script src="my_component.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+</div>
+
+<p><b>Note:</b>&nbsp;You must load React components at the bottom of your HTML page to improve page load time. You could have load them in the header but that will slow down your web-page so don't do it.</p>
+<h3>How it works?</h3>
+<p>To display react components you must include them in your page using an empty &lt;div&gt; tag. This tag must have an "id" attribute. This is how React will be able to find the location where it will display the component. In the next example we include a placeholder for a React component:</p>
+<div>
+<pre><code class="language-html">&lt;!-- ... HTML content ... --&gt;
+&lt;div id="component_name"&gt;&lt;/div&gt;
+&lt;!-- ... rest of HTML ... --&gt;</code></pre>
+</div>
+<h3>How a component look like</h3>
+<p>A component is created using JavaScript. You can use a component template to start. Here is an example that we have copy from React documentation. I have not tested this component so I do not know if is going to work:</p>
+<p><b>File:</b>&nbsp;my_component.js</p>
+<div>
+<pre><code class="language-javascript line-numbers">'use strict';
+const e = React.createElement;
+class LikeButton extends React.Component {
+    constructor(props) {
+         super(props);
+         this.state = { liked: false };
+    }
+    render() {
+         if (this.state.liked) {
+         return 'You liked this.';
+    }
+    return e(
+         'button',
+         { onClick: () =&gt; this.setState({ liked: true }) },
+         'Like'
+    );
+    }
+}
+const domContainer = document.querySelector('#component_name');
+ReactDOM.render(e(LikeButton), domContainer);</code></pre>
+
+</div>
+<h3>What is JSX</h3>
+<p>You can build apps using React in two ways:</p>
+<ul>
+<li>using standard React objects and methods</li>
+<li>using a new technology called JSX</li>
+</ul>
+<p>Now JSX is something new and intriguing. It stands for JavaScript XML. It is a new language that consist of JavScript mingled with XML or XHTML. JSX makes it easier to write and add HTML in React. JSX is an extension of the JavaScript language based on ES6, and is translated into regular JavaScript at runtime.</p>
+<p>So does your browser understand JSX? No it does not. But to use JSX you need a pre-processor that will translate JSX files into row JavaScript. In other words, if JavaScript files contains JSX, that file will have to be transpiled into regular JavaScript.</p>
+<p>React include a transpiler called Babel. It converts JSX files into vanilla JavaScript. React also uses ES6 that is not supported by all browsers. Babel converts ES6 to code that is compatible with older browsers that do not support ES6.</p>
+
+<p><b>Standard approach:</b></p>
+
+<div>
+<pre><code class="language-javascript line-numbers">(function() {
+    var element = React.DOM.div({}, "Hello World");
+    ReactDOM.render(element, document.getElementById("app"));
+})();</code></pre>
+</div>
+
+<p><b>Using JSX:</b></p>
+<div>
+<pre><code class="language-javascript line-numbers">(function() {
+    var HelloWorld = React.createClass({
+        render : function() {
+        return (
+            &lt;div&gt; Hello World &lt;/div&gt;
+        );
+        }
+    });
+    var element = React.createElement(HelloWorld, {});
+    ReactDOM.render(element, document.getElementById("app"));
+})();</code></pre>
+</div>
+<h3>Using Babel</h3>
+<p>You can use Babel in two ways. At client side or at server side. During development or for making examples you can include Babel client in your web page but you can also use Babel on server side. You can use Babel to pre-compile you application using command line interface&nbsp;
+<a href="https://babeljs.io/docs/usage/cli" rel="nofollow">CLI</a>&nbsp;or even better, use a build tool like&nbsp;<a href="https://webpack.js.org/" rel="nofollow">Webpack</a>&nbsp;to run Babel each time your code changes.</p>
+
+<p><b>Learn more about:</b>&nbsp;<a href="https://babeljs.io/" rel="nofollow noopener noreferrer">Babel</a></p>
+<h3>Can I use react with Bootstrap?</h3>
+<p>Sorry, React and Bootstrap are not designed to be used together. Bootstrap is using JQuery to manipulate DOM elements directly while React has its own libraries to manipulate DOM. However there is one Bootstrap implementation that is specific for React. This library is called&nbsp;<a href="https://reactstrap.github.io/" rel="nofollow">reactstrap</a>&nbsp;and is open source.</p>
+
+<h4>Example:</h4>
+
+<div>
+<pre><code class="language-javascript line-numbers">import React from 'react';
+import { Button } from 'reactstrap';
+export default (props) =&gt; {
+    return (
+        &lt;Button color="danger"&gt;Danger!&lt;/Button&gt;
+    );
+};</code></pre>
+</div>
+
+<p><b>Note:</b>&nbsp;The example above is using JSX. It will create a button that does absolutely nothing. What is interesting is that this button do not exist until JavaScript is making it. In a static web-page we must create de button using HTML.</p>
+
+<h3><a id="react-app">Create React App</h3>
+<p>Browsing randomly I have found a project that looks interesting. This project is open source and it combines the technology I have mentioned above into a single tool useful to start a React SPA. It is available on GitHub and apparently is maintained by Facebook.</p>
+
+<ul>
+<li>Create React App:&nbsp;<a href="https://create-react-app.dev/"
+    target="_blank" rel="nofollow noopener noreferrer">Home Page</a></li>
+<li>Create React App:&nbsp;<a href="https://github.com/facebook/create-react-app"
+    target="_blank" rel="nofollow noopener noreferrer">GitHub Project</a></li>
+</ul>
+
+<p>This project uses: WebPack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them. You can use this to create your startup project in minutes and develop on top of it your application. After you run and install it you will get a structure of folder with files that look like this:</p>
+
+<pre><code class="language-output">my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│ ├── favicon.ico
+│ ├── index.html
+│ └── manifest.json
+└── src
+ ├── App.css
+ ├── App.js
+ ├── App.test.js
+ ├── index.css
+ ├── index.js
+ ├── logo.svg
+ ├── serviceWorker.js
+ └── setupTests.js
+</code></pre>
+
+<p><b>Note:</b>&nbsp;This is not the only technology you can use to start a React application. You can use other technology more advanced</p>
+
+<p><b>Related References</b></p>
+<ul>
+<li><a href="https://neutrino.js.org/" rel="nofollow noopener noreferrer" target="_blank">Neutrino</a></li>
+<li><a href="https://github.com/insin/nwb" rel="nofollow noopener noreferrer" target="_blank">NWB</a></li>
+<li><a href="https://github.com/rails/webpacker" rel="nofollow noopener noreferrer" target="_blank">Rails Web-packer</a></li>
+<li><a href="https://symfony.com/doc/current/frontend/encore/reactjs.html" rel="nofollow noopener noreferrer" target="_blank">Symphony</a></li>
+<li><a href="https://www.gatsbyjs.org/" rel="nofollow noopener noreferrer" target="_blank">Gatsby</a></li>
+<li><a href="https://nextjs.org/" rel="nofollow noopener noreferrer" target="_blank">Next.js</a></li>
+</ul>
+
+<h3><a id="react-native">React Native</h3>
+<p>React Native is an open-source mobile application framework created by Facebook. It is used to develop applications for Android, iOS, Web and UWP (Universal Windows Platform) by enabling developers to use React along with native platform capabilities.</p>
+<p>React Native does not use HTML or CSS. Instead, messages from the JavaScript thread are used to manipulate native views. React Native also allows developers to write native code in languages such as Java for Android and Objective-C or Swift for iOS which make it even more flexible.</p>
+
+<p>You can learn more from:&nbsp;<a href="https://reactnative.dev/"
+rel="nofollow noopener noreferrer" target="_blank">React Native Homepage</a></p>
+
+<hr>
+
+<h3><a id="vulcan">Vulcan framework</h3>
+
+<div class="alert alert-info">
+Vulcan is a framework that gives you a set of tools for quickly building React &amp; GraphQL-based web applications. It can handle data loading, e-mail notifications, automatic form generation, and much more, out of the box.
+</div>
+
+<h3>References</h3>
+
+<ul>
+<li>homepage: <a href="http://vulcanjs.org/">vulcanjs.org</a></li>
+<li>documentation: <a href="http://docs.vulcanjs.org/">docs.vulcanjs.org</a></li>
+</ul>
+
+
+<h2><a id="vue">Introduction to Vue.js</h2>
+
+<div class="alert alert-info">
+Vue.js is an approachable, versatile, performant and progressive JavaScript framework that help you build maintainable and testable dynamic websites. It was created by Evan You who worked for Google using AngularJS.
+</div>
+
+<p> Some people say Angular was over-engineered and is now difficult to use in applications. For some even React is too complex, so here it is Vue that is simplified and distinct. We look forward to use this library in some of our projects. </p>
+
+<h4>Notes:</h4>
+<ul>
+<li>First version was released in February 2014</li>
+<li>Require HTML, CSS and JavaScript</li>
+<li>You can do an incremental implementation</li>
+<li>Very small (20Kb) runtime library</li>
+</ul>
+<h3>Architecture</h3>
+<p>Vue.js implements model-view-view-model architecture: MVVM. This facilitate the separation of development for graphical user interface (view) from the development of business logic (the model). The ViewModel is an intermediary component that convert data elements from model to visual components to be display in view. You can read more about this architecture here:&nbsp;<a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel" rel="nofollow">Wikipedia MVVM</a></p>
+<p><b>Components</b>&nbsp;Vue components are custom HTML element that encapsulate code. The code represents behavior that makes the HTML element dynamic. That is it can change it's display properties and content. The HTML element is identified by Vue using an attribute: id="name". This is similar to React.</p>
+<p><b>Templates</b>&nbsp;Vue uses HTML template syntax. Templates can use JSX syntax. This enable applications to be created using CBD (Component Based Development) methodology. Using reusable components with templates you can improve your productivity to create complex apps.</p>
+<p><b>Reactivity</b>&nbsp;Vue is a reactive system. That means each component keeps track of its dependencies. So the system knows when to re-render a component. This is the secret of a reactive webpage. It refresh itself without the need for you to press the refresh button. This feature is also one of the goals of modern web applications.</p>
+<p><b>Transition</b>&nbsp;Vue enable animation effects to be used for components. That means when a new component is created or removed, it is not displayd immediately but it can have an effect, for example: fading, sliding. These operations can use CSS or custom JavaScript libraries such as&nbsp;<a href="http://velocityjs.org/" rel="nofollow">velocity.js</a></p>
+<p><b>Routing</b>&nbsp;Vue provides an interface to change what is displayed on the page based on the current URL path. That means you can make applications that enable creation of bookmarks. This is cool because a SPA (Single Page Application) usually have a single page. And the URL do not change when you do something in that page. Vue doesn't come with front-end routing. But the open source "vue-router" package provides an API to update application's URL.</p>
+<h3>References</h3>
+<p>You have not learned Vue just yet. So far you know what Vue is and what it can do. Next you must visit project homepage, follow the Vue free video lectures and red Vue documentation. Then you can join Vue&nbsp;<a href="https://discord.com/invite/HBherRA" rel="nofollow">discord group</a>&nbsp;and start your first project. Do not be afraid to ask questions on Discord about Vue. This community is very responsive.</p>
+<p><b>Project:</b></p>
+<ul>
+<li><a href="https://vuejs.org/" rel="nofollow noopener noreferrer" target="_blank">Vue HomePage</a></li>
+<li><a href="https://github.com/vuejs/vue" rel="nofollow noopener noreferrer" target="_blank">Vue GitHub</a></li>
+</ul>
+<p><b>Tools</b></p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools" rel="nofollow noopener noreferrer" target="_blank">
+    Devtools</a>: Browser devtools extension for debugging Vue.js applications</li>
+<li><a href="https://cli.vuejs.org/" rel="nofollow noopener noreferrer" target="_blank">
+    Vue CLI</a>: Standard Tooling for rapid Vue.js development</li>
+<li><a href="https://vue-loader.vuejs.org/" rel="nofollow noopener noreferrer" target="_blank">
+    Vue Loader</a>: Webpack loader that allows Vue Single-File Components (SFCs)</li>
+</ul>
+<p><b>Libraries</b></p>
+<ul>
+<li><a href="https://router.vuejs.org/" target="_blank" rel="nofollow noopener noreferrer">
+    Vue Router</a>: The official router for Vue.js</li>
+<li><a href="https://vuex.vuejs.org/" target="_blank" rel="nofollow noopener noreferrer">
+    Vuex</a>: Centralized State Management for Vue.js</li>
+<li><a href="https://ssr.vuejs.org/" target="_blank" rel="nofollow noopener noreferrer">
+    Vue Server Renderer</a>: Server-Side rendering for Vue.js</li>
+</ul>
+
+<hr>
+
+<h2><a id="svelte">Introduction to Svelte</h2>
+
+<div class="alert alert-info">
+Svelte is a tool for building fast web applications. It is similar to JavaScript frameworks such as React and Vue, which share a goal of making it easy to build slick interactive user interfaces.
+</div>
+
+<p>Svelte converts your app into ideal JavaScript at build time, rather than interpreting your application code at run time. This means you don't pay the performance cost of the framework's abstractions, and you don't incur a penalty when your app first loads.</p>
+
+<h3>Highlighted features:</h3>
+
+<p>So before we dive into learning how to use Svelte, let's learn what it can do for us and why the effort to learn it. I have just copy these from Svelte homepage and try to make sense of it all.</p>
+
+<h4>write less code</h4>
+
+<p>Reducing the amount of code you have to write is an explicit goal of Svelte. Unlike React and Vue, Svelte will help you avoid boilerplate code. Svelte is actually like a new language that must be compiled in order to work.</p>
+
+<h4>no virtual DOM</h4>
+
+<p>There is a claim that DOM of the browser is slow. DOM="Document Object Model". Therefore reactive frameworks: Vue and React are having a parallel DOM that is more efficient. This claim is temporary maybe true but in time we know that companies optimize and improve upon things. So in the future we think the original DOM will become more efficient. Therefore Svelte do not use a virtual DOM.
+
+<h4>truly reactive</h4>
+
+<p>Svelte 3 moves reactivity out of component API and into the Svelte language. It enable creation of: <em>cybernetically enhanced web apps</em>. Moving reactivity into the language compiler. Svelte becomes a low level declarative language that create reactivity at compile time improving efficiency at runtime.</p>
+
+<h3>Learning Svelte</h3>
+
+<ul>
+<li>youtube:  <a href="https://www.youtube.com/watch?v=AdNJ3fydeao">Rich Harris</a></li>
+<li>homepage: <a href="https://svelte.dev/">svelte.dev</a></li>
+</ul>
+
+<h2><a id="angular">Introduction to Angular</h2>
+
+<div class="alert alert-info">
+Angular is a platform for building mobile and desktop web applications. It is developed and maintained by Google. It is a MVC (Model View Controller) framework for TypeScript. Angular and AngularJS are two different things.
+</div>
+
+<p>Angular version 11 was released on November 11, 2020. Each version is expected to be backward-compatible with the prior release. The Angular development team has pledged to do twice-a-year upgrades.</p>
+
+<p>AngularJS is a JavaScript framework written in JavaScript. AngularJS is distributed as a JavaScript file, and can be added to a web page with a script tag. AngularJS extends HTML with ng-directives.
+
+<pre><code class="language-html line-numbers">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"&gt;&lt;/script&gt;
+&lt;body&gt;
+
+&lt;div ng-app=""&gt;
+  &lt;p&gt;Name: &lt;input type="text" ng-model="name"&gt;&lt;/p&gt;
+  &lt;p ng-bind="name"&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></code>
+
+<h3>Learning Angular</h3>
+
+<ul>
+<li><a href="https://angular.io/">Angular Project</a></li>
+<li><a href="https://angularjs.org/">Angular Framework</a></li>
+</ul>
+
+<h2><a id="ember">Introduction to Ember</h2>
+
+<div class="alert alert-info">
+This is an open source reactive JavaScript framework similar to Angular. They say: "Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich UIs that work on any device".</div>
+
+<p>Ember.js is an open source JavaScript framework under MIT license. It uses the MVC (Model-View-Controller) architecture pattern. In Ember.js, route is used as model, handlebar template as view and controller manipulates the data in the model. </p>
+
+<h4>Highlighted Features</h4>
+
+<p>1. It provides the Command Line Interface utility that integrates Ember patterns into development process and focuses easily on the developer productivity.</p>
+
+<p>2. It supports data binding to create the link between two properties and when one property changes, the other property will get upgraded with the new value.</p>
+
+<h3>Learning Ember</h3>
+
+<ul>
+<li>Homepage: <a href="https://emberjs.com/">emberjs.com</a></li>
+<li>Video by: <a href="https://www.youtube.com/watch?v=eQUvN9Ujs1s&list=PLk51HrKSBQ88wDXgPF-QLMfPFlLwcjTlo" rel="noreferrer, nofollow">Shwan Chen</a></li>
+</ul>
+
+<p>They say ember is used by many well known companies. This list is impressive. Probably if you want to apply for one of these companies you should study a little bit more about Ember.</p>
+
+<ul>
+<li>Netflix</li>
+<li>Microsoft</li>
+<li>Linkedin</li>
+<li>Apple</li>
+<li>Heroku</li>
+<li>Square</li>
+</ul>
+
+<h4>Examples</h4>
+
+<p>For examples, watch my Twitch <a href="https://twitch.tv/emoise" target="_blank" rel="noopener">streaming channel</a>. One of next sessions I will use JavaScript frameworks so you can learn from my videos. Until then, have fun reading other tutorials that I have posted and check-out my examples on <a href="https://codepen.io/elucian_moise" target="_blank" rel="noopener">codepen.io</a> website.</p>
+
+<hr>
+<p><b>Read next:</b>
+<a href="server.html">Server Side JS</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+</body>
+</html>
