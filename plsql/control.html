@@ -31,11 +31,7 @@
     <div class="col  bottom-right">
         <a href="index.html#plsql-index" rel="nofollow">index</a>&lt;--
     </div>
-</div>
-    
-
-<hr>
-
+</header><hr>
 
 <h2>PL/SQL Flow Control</h2>
 
@@ -53,7 +49,7 @@ The secret is to build a logical system that appear to be intelligent and capabl
 <p>The decision statement is the most easy to understand and is one of the most used control statement. This statement is based on a single logical expression and two regions. The true region and the false region. All statements in true region will be executed when the condition is true and the other region is executed when the condition is false.</p>
 
 <div align="center">
-  <img src="images/decision.svg" alt="decision" 
+  <img src="../images/decision.svg" alt="decision" 
   width="520" class="img-fluid protect rounded shadow border" >    
   <p>decision diagram</p>
 </div>  
@@ -88,7 +84,7 @@ end if;
 <p>What if we have a series of conditions?. One sollution is to use nested IF statements. This is perfectly alright but there is a better alternative. We can use ELSIF keyword to make a "cascade" of conditions so called <em>ladder statement</em>. In the next picture you can see the workflow looks like a ladder. </p>
 
 <div align="center">
-  <img src="images/ladder.svg" alt="decision" 
+  <img src="../images/ladder.svg" alt="ladder" 
   width="640" class="img-fluid protect rounded shadow border" >    
   <p>Decision Ladder</p>
 </div>  
@@ -110,6 +106,7 @@ end if;
 <h2>Infinite loop</h2>
 
 <p>Now the second more important structure is the Loop. This is a repetition of the same statement over and over forever. The infinite loop must be avoided in computer programming to avoid program being stack. This can be a defect in program when there is no exit point and the program do not give any result back. We can force a program to stop by killing the process. This is the worst programming error a developer can do.</p>
+
 <p><b>Loop syntax:</b></p>
 <pre><code class="language-plsql line-numbers">loop
  -- sequence_of_statements
@@ -117,6 +114,7 @@ end if;
 end loop;
 
 </code></pre>
+
 <p>This is basically the structure of the loop but is never used in practice. We need to create an exit condition to be able to terminate the loop.</p>
 <p><b>Exit point:</b></p>
 <pre><code class="language-plsql line-numbers">loop
@@ -129,13 +127,15 @@ end loop;
 </code></pre>
 <p>So in the previous example the &lt;condition&gt; is used to trigger the EXIT statement that will terminate the loop. The program will continue after the loop.</p>
 <p><b>Conditional exit:</b></p>
+
 <pre><code class="language-plsql line-numbers">loop
  -- sequence_of_statements
  exit when &lt;condition&gt;;
 end loop;
-
 </code></pre>
+
 <p>I think you guess what this will do. The if statement is no longer required. It is just a simplification of previous technique. So now we can create a conditional exit point. In other languages this is achieved by BREAK keyword. Not in PL/SQL.</p>
+
 <p><b>Using labels:</b></p>
 <pre><code class="language-plsql line-numbers">&lt;&lt;outer&gt;&gt;
 loop
@@ -154,7 +154,7 @@ end loop outer;
 <p>This loop is designed to execute only if a condition is true. If the condition is false the loop block skip over and is never executed. This is different then the previous loop that execute at least once. On this loop we can have no exit point, or we can also have several exit points defined like in a normal loop.</p>
 
 <div align="center">
-  <img src="images/loop.jpg" alt="decision" width="520" 
+  <img src="../images/while.svg" alt="while" width="520" 
        class="img-fluid protect rounded shadow border" >    
   <p>while loop diagram</p>
 </div>  
