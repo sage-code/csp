@@ -11,9 +11,11 @@ Require valid-user
 # End section managed by cPanel: Password Protected Directories -cp:ppd
 #----------------------------------------------------------------cp:ppd
 
-<FilesMatch "\.html$">
+<FilesMatch "\*\.html$">
 AuthType Basic
 AuthName "Protected File"
 AuthUserFile "/home/sageco10/.htpasswds/csp.sagecode.net/passwd"
 Require valid-user
 </FilesMatch>
+
+ErrorDocument 401 "/401.html"

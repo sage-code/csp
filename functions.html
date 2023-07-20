@@ -293,44 +293,19 @@ Generators are useful for a variety of tasks, such as:
 <p>
 Here is an example of a generator function:
 </p>
-<pre><code class="language-javascript line-numbers">
-// declare a generator
+<pre>
 function* generateNumbers() {
   for (let i = 0; i < 10; i++) {
     yield i;
   }
 }
+</pre>
 
-//using the generator
-const generator = generateNumbers();
-
-for (let value of generator) {
-  console.log(value);
-}
-</code></pre>
-
-<p>The * after the function keyword in the example is used to tell the JavaScript engine that generateNumbers() is a generator function. Without the *, the JavaScript engine would treat the function as a regular function.</p>
+<p>The * after the function keyword in the example is used to tell the JavaScript engine that this is a generator function. Without the *, the JavaScript engine would treat the function as a regular function.</p>
 
 <p>
-This function will generate a sequence of 10 numbers, starting from 0. The <em>yield</em> keyword is used to pause the execution of the function and return the current value. The <em>next()</em> method is then used to resume the execution of the function and get the next value.
+This function will generate a sequence of 10 numbers, starting from 0. The `yield` keyword is used to pause the execution of the function and return the current value. The `next()` method is then used to resume the execution of the function and get the next value.
 </p>
-
-<pre><code class="language-javascript line-numbers">
-const generator = generateNumbers();
-
-// The first call to next() will return the value 0.
-const value1 = generator.next().value;
-console.log(value1); // 0
-
-// The second call to next() will return the value 1.
-const value2 = generator.next().value;
-console.log(value2); // 1
-
-// The third call to next() will return the value 2.
-const value3 = generator.next().value;
-console.log(value3); // 2
-</code></pre>
-
 <p>
 Generators are a powerful tool that can be used to simplify and improve the performance of JavaScript code. If you are not familiar with generators, I encourage you to learn more about them. They can be a valuable asset in your JavaScript toolbox.
 </p>
