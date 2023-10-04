@@ -3,19 +3,20 @@
 # Section managed by cPanel: Password Protected Directories     -cp:ppd
 # - Do not edit this section of the htaccess file!              -cp:ppd
 #----------------------------------------------------------------cp:ppd
-AuthType Basic
-AuthName "CS2 Programming Course:"
-AuthUserFile "/home/sageco10/.htpasswds/csp.sagecode.net/passwd"
-Require valid-user
+#AuthType Basic
+#AuthName "CS2 Programming Course:"
+#AuthUserFile "/home/sageco10/.htpasswds/csp.sagecode.net/passwd"
+#Require valid-user
 #----------------------------------------------------------------cp:ppd
 # End section managed by cPanel: Password Protected Directories -cp:ppd
 #----------------------------------------------------------------cp:ppd
 
-<FilesMatch "\*\.html$">
-AuthType Basic
-AuthName "Protected File"
-AuthUserFile "/home/sageco10/.htpasswds/csp.sagecode.net/passwd"
-Require valid-user
-</FilesMatch>
+# UNCOMMENT ALL THIS FOR PASSWORD PROTECTION
+#<FilesMatch "\*\.html$">
+#AuthType Basic
+#AuthName "Protected File"
+#AuthUserFile "/home/sageco10/.htpasswds/csp.sagecode.net/passwd"
+#Require valid-user
+#</FilesMatch>
 
 ErrorDocument 401 "/401.html"
