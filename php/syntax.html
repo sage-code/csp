@@ -54,8 +54,8 @@ PHP Is a scripting language for web pages similar to Microsoft ASP. The differen
 <p><b>Note:</b> When you embed PHP code&nbsp;in an&nbsp;HTML&nbsp;file,&nbsp;you&nbsp;need to use the .php&nbsp;file extension for that file, so that your web server knows to send the file to&nbsp;PHP for processing.</p>
 
 <h2>PHP Keywords</h2>
-<p> There are about 56 keywords in PHP, compared with 51 in Java. Do not try to memoryze this list,
-it is not a dictionary. But after you finish this tutorial you will know most of them. D
+<p> There are about 56 keywords in PHP, compared with 51 in Java. Do not try to memorize this list,
+it is not a dictionary. But after you finish this tutorial you will know most of them.
 </p>
 <table class="table table-bordered table-sm table-dark">
 <tr><td>abstract  </td><td>and         </td><td>array     </td><td>as          </td></tr>
@@ -79,13 +79,9 @@ it is not a dictionary. But after you finish this tutorial you will know most of
 
 <h2>PHP Comments</h2>
 
-<p>PHP comments are like C comments. In addition, symbol "#" will start also a line comment like in Python. 
-Line comments start with "//", block comments are enclosed between "/* ... */".</p>
+<p>PHP comments are like C comments. In addition, symbol "#" will start also a line comment like in Python. Line comments start with "//", block comments are enclosed between "/* ... */".</p>
 
-<p><b>Note:</b> Remember HTML comments are also possible, using notation &lt;!&ndash; .... &ndash;&gt;, 
-so you can comment out the entire &lt;php? ... ?&gt; 
-block, but this will not stop the code engine to execute PHP code inside HTML comments. 
-So you can create dynamic comments using PHP. Is that something?</p>
+<p><b>Note:</b> Remember HTML comments are also possible, using notation &lt;!&ndash; .... &ndash;&gt;, so you can comment out the entire &lt;php? ... ?&gt; block, but this will not stop the code engine to execute PHP code inside HTML comments. So you can create dynamic comments using PHP. Is that something?</p>
 
 <h4>Example:</h4>
 
@@ -103,8 +99,7 @@ echo $first.$second; // expected 12.5
 <h2>Text Output&nbsp;</h2>
 
 <p>Using PHP you can print text into HTML documents. This is done using <em>echo</em>; statement. 
-It can be used with paranthesis (...) that are optional and can have one or multiple arguments, separated by coma. 
-If printable, arguments are output in HTML document as new text.</p>
+It can be used with parenthesis (...) that are optional and can have one or multiple arguments, separated by coma. If printable, arguments are output in HTML document as new text.</p>
 
 <p>You can do the same thing with the <em>print</em> statement, except this statement is not going to enable multiple parameters. Statement <em>print</em> is a little bit slower than <em>echo</em>. Print also can be used with (...) and can accept multiple arguments that will be printed one after another.</p>
 
@@ -123,9 +118,7 @@ print "Hello PHP!&lt;br&gt;";
 
 <h2>Basic Types</h2>
 
-<p>In program we use this concept of <em>data type.</em> 
-At low level <em>data</em> is represented in <em>binary code</em> of 0 and 1.
-PHP is a high level language so it has support for abstract data types:</p>
+<p>In program we use this concept of <em>data type.</em> At low level <em>data</em> is represented in <em>binary code</em> of 0 and 1. PHP is a high level language so it has support for abstract data types:</p>
 
 <ul>
 <li>String</li>
@@ -175,7 +168,9 @@ echo var_dump($N), '&lt;br&gt;';
 <li>Object</li>
 </ul>
 <p><b>Array Example:</b></p>
+
 <p>Arrays are 0 based indexed collection of elements. To declare an array we use "array" constructor:</p>
+
 <pre><code class="language-php line-numbers">&lt;?php
 /* declare array of 3 strings */
 $fruits = array("Orange","Banana","Apple");
@@ -188,6 +183,7 @@ echo "$fruits[0],$fruits[1],$fruits[2]";
 
 <p><b>Object Example:</b></p>
 <p>An object is a composite data type that have attributes and functions. First we define a "class" that is the object data type. Next we can create one or more "instances" of the class, that are called objects:</p>
+
 <pre><code class="language-php line-numbers">&lt;?php
 // declare object data type Person
 class Person {
@@ -201,6 +197,7 @@ $barbu = new Person("Barbu",35);
 // show the "name" attribute
 echo $barbu-&gt;name;
 ?&gt;</code></pre>
+
 <p><b>Notes: </b></p>
 <ul>
 <li>Keyword "this" represent current object that is going to be created by constructor;</li>
@@ -208,10 +205,10 @@ echo $barbu-&gt;name;
 <li>A constructor can receive parameters and establish object attributes;</li>
 <li>Object attributes are accessed with symbol "-&gt;" that is inherited from C;</li>
 </ul>
+
 <h2>Constants</h2>
-<p>In PHP you can create identifiers for constants. These can be used to put assign a name for a value, 
-and avoid repeating same literal in multiple places. Avoiding "magic literals" is a good practice.
-Constant values can not be modified during program execution.</p>
+<p>In PHP you can create identifiers for constants. These can be used to put assign a name for a value, and avoid repeating same literal in multiple places. Avoiding "magic literals" is a good practice. Constant values can not be modified during program execution.</p>
+
 <h4>Example:</h4>
 
 <p>We use <em>define</em> as keyword with following syntax:
@@ -225,7 +222,7 @@ echo HELLO;
 
 <h2>Variables</h2>
 
-<p>In PHP we can define names (itentifiers) that represent one or more values stored in memory.
+<p>In PHP we can define names (identifiers) that represent one or more values stored in memory.
 These identifiers care so called "variable". The value of a variable can be changed during runtime,
 using an assign statement or a modifier operator. In PHP variable names must have "$" prefix.</p>
 
@@ -237,12 +234,9 @@ using an assign statement or a modifier operator. In PHP variable names must hav
 <h2>Expression</h2>
 
 <p>
-Expressions are the most important building blocks of PHP. In PHP, almost anything you write is an expression. 
-The simplest yet most accurate way to define an expression is anything that is or produce a value. </p>
+Expressions are the most important building blocks of PHP. In PHP, almost anything you write is an expression. The simplest yet most accurate way to define an expression is anything that is or produce a value. </p>
 
-<p>The most basic forms of expressions are constant literals and variables. When you type "$a = 5" in CLI, 
-you're assigning '5' into $a. Number 5, obviously, has the value 5, and is called a constant literal. 
-In other words '5' is an expression with the value of 5 (in this case, 5 is an integer constant).</p>
+<p>The most basic forms of expressions are constant literals and variables. When you type "$a = 5" in CLI, you're assigning '5' into $a. Number 5, obviously, has the value 5, and is called a constant literal. In other words '5' is an expression with the value of 5 (in this case, 5 is an integer constant).</p>
 
 <h4>Examples:</h4>
 
@@ -261,9 +255,9 @@ $a == 5;     // logic expression (true)
 <h2>Operators</h2>
 
 <p>An operator is one special character or group of 2 or 3 characters that are considered together as one symbol. 
-Operators are used to connect so called <em>operands</em> and form expressions. The operators represent computations or computing opperations that will dictate the result. Depending on data type, we can perform specific operations.</p> 
+Operators are used to connect so called <em>operands</em> and form expressions. The operators represent computations or computing operations that will dictate the result. Depending on data type, we can perform specific operations.</p> 
 
-<p>Using operators with wrong data type can lead to errors and unexpected results. Therefore you learn the operators together with the specific data types. Some operators are <em>polimorph</em>. That means operator can act on different data types and can be used to create mixt expressions.</p>
+<p>Using operators with wrong data type can lead to errors and unexpected results. Therefore you learn the operators together with the specific data types. Some operators are <em>polymorph</em>. That means operator can act on different data types and can be used to create mixt expressions.</p>
 
 <h3>Assign Operator</h3>
 <p>This operator is different than others. The assignment symbol: "=" can be used to setup initial values for a variables to  constant literals or expressions. It can be used in combination with other operators to create a "modifier" operators.</p>
@@ -281,7 +275,7 @@ $c  = $a + $b; //assign expression value to $c
 
 <p>Numeric operators are used most of the time with infix expressions. 
 That means the operator is usually between two operands.
-Some numeric operators are unar operators and require one single operand.</p>
+Some numeric operators are unary operators and require one single operand.</p>
 
 <p>In the following examples we consider; $x = 4, $y = 2.</p>
 
@@ -338,7 +332,7 @@ Some numeric operators are unar operators and require one single operand.</p>
 <h3>Modifier Operators</h3>
 
 <p>Next operators are used to modify <em>in place</em> value of a variable. 
-These operators are a combination of assign opperation and a computation operation into one.
+These operators are a combination of assign operation and a computation operation into one.
 We use these operators to make expressions shorter but also more performant.</p>
 
 <h4>Example:</h4>
@@ -504,6 +498,7 @@ $a  += 2; // execute $a = $a + 2
 
 <h3>String Concatenation</h3>
 <p>Variable names in PHP start with $ prefix. PHP is a dynamic language. Type of variable is automatically detected by the PHP engine. In next example we concatenate a string literal with variable using a dot.&nbsp;</p>
+
 <h4>Variable Rules:</h4>
 <ul>
 <li>variable name stat with "sigil" symbol $,</li>
